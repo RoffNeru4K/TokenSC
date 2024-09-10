@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Routing Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="content" class="hidden">
+        <h1>Halaman work</h1>
+        <p>Ini adalah halaman untuk /posts/16</p>
+    </div>
+    <script>
+        // Fungsi untuk cek URL
+        function checkUrl() {
+            // Mendapatkan URL saat ini
+            const currentUrl = window.location.pathname;
+
+            // Memeriksa apakah URL cocok dengan /posts/16
+            if (currentUrl === "/posts/16") {
+                document.getElementById('content').classList.remove('hidden');
+            }
+        }
+
+        // Jalankan fungsi setelah halaman dimuat
+        window.onload = checkUrl;
+    </script>
+</body>
+</html>
